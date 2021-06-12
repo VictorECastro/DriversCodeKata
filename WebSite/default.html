@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="stylesheet" href="Content/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="Content/CodeKata.css" type="text/css">   
+    <title>Code Kata Exercise</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 header">
+                <h3>Code Kata Exercise - Victor E. Castro</h3>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+           <div class="col-md-12" style="text-align: center;">
+            <form id="form">
+                <h3>Select file to process</h3>
+                <br/>
+                <input type="file" name="fileSel" id="file">
+                <br/>
+                <br/>
+                <button class="btn btn-success btn-sm" style="width: 120px" id="btnSubmit">Process</button>
+                <button class="btn btn-warning btn-sm" onclick="location.reload();" style="width: 120px" id="btnRefresh">Refresh</button>
+            </form>
+            <!--form method="post" enctype="multipart/form-data">
+                <input type="file" name="files[]" multiple class="btn btn-info btn-sm" />
+                <input type="submit" value="Process File" class="btn btn-success btn-sm" name="submit" />
+              </form>-->
+            </div>
+            <br/>
+            <div class="row" style="border-bottom: solid thick; border-bottom-color: dimgrey ;"></div>
+            <br/>
+            <div class="row" class="preview">
+                <div class="col-md-12" id="results">                    
+                   
+                </div>
+            </div>
+           
+        </div>
+        <br>
+    </div>
+
+     <!-- Modal -->
+     <div id="ModalErr" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header" style="background-color:maroon; color:white">
+             
+              <h4 class="modal-title">Code Kata - Error</h4>
+            </div>
+            <div class="modal-body">
+              <span class="h5" style="color: dimgrey;">Please select a file</span>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        var uri = window.location.toString();
+        if (uri.indexOf("?") > 0) {
+            var clean_uri = uri.substring(0, uri.indexOf("?"));
+            window.history.replaceState({}, document.title, clean_uri);
+        }
+        </script>
+   <script>
+       const $results = document.querySelector('#fileResult');
+
+
+       $(function(){
+    $('#btnSubmit').on('click', function(event){
+    event.preventDefault();
+    var nme = document.getElementById("file");
+    if(nme.value.length < 4){
+        $('#ModalErr').modal('show');
+        nme.focus();
+        return false;
+    }
+    else
+    {
+
+    var file = document.getElementById("file").files[0];
+    var form = new FormData();
+    form.append("file", file);
+    
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "http://localhost:51363/api/Process",
+      "method": "POST",
+      "processData": false,
+      "contentType": false,
+      "mimeType": "multipart/form-data",
+      "data": form,
+      "cors": true
+    };
+
+    $.ajax(settings).done(function (response) {
+        document.getElementById('results').innerText = response;
+     
+      /*console.log(response);*/
+      
+    });
+}   
+  });
+});
+   </script>
+</body>
+</html>
