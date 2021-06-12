@@ -1,0 +1,11 @@
+C:\Drivers\RestAPI\CodeKata_Drivers\obj\Release\net5.0\PubTmp\Out\CodeKata_Drivers.exe
+C:\Drivers\RestAPI\CodeKata_Drivers\obj\Release\net5.0\PubTmp\Out\appsettings.Development.json
+C:\Drivers\RestAPI\CodeKata_Drivers\obj\Release\net5.0\PubTmp\Out\appsettings.json
+C:\Drivers\RestAPI\CodeKata_Drivers\obj\Release\net5.0\PubTmp\Out\CodeKata_Drivers.dll
+C:\Drivers\RestAPI\CodeKata_Drivers\obj\Release\net5.0\PubTmp\Out\CodeKata_Drivers.deps.json
+C:\Drivers\RestAPI\CodeKata_Drivers\obj\Release\net5.0\PubTmp\Out\CodeKata_Drivers.runtimeconfig.json
+C:\Drivers\RestAPI\CodeKata_Drivers\obj\Release\net5.0\PubTmp\Out\CodeKata_Drivers.pdb
+C:\Drivers\RestAPI\CodeKata_Drivers\obj\Release\net5.0\PubTmp\Out\Microsoft.OpenApi.dll
+C:\Drivers\RestAPI\CodeKata_Drivers\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+C:\Drivers\RestAPI\CodeKata_Drivers\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Drivers\RestAPI\CodeKata_Drivers\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
