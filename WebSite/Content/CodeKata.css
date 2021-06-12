@@ -1,0 +1,19 @@
+.header{
+    background-color: darkgreen;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+}
+.box {
+    display:inline-block;
+    width: 100%;
+    border: 10px solid #dddddd;
+    border-radius: 1;
+    max-width: 100%;
+    max-height: auto;
+    margin: 0 auto;
+    text-align:center;
+}
+.preview{
+    display: none;
+}
